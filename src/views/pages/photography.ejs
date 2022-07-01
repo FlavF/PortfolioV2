@@ -1,0 +1,32 @@
+<h1 id="#photos">Photographie</h1>
+
+<!-- Filter button-->
+<div id="myBtnContainer" class="btn-container">
+    <button class="btn active" onclick="filterSelection('all')"> Tous</button>
+    <?php foreach ($tags as $tag): ?>
+    <button class="btn"
+        onclick="filterSelection('<?=htmlspecialchars($tag['name']) ?>')"><?=htmlspecialchars($tag['name']) ?></button>
+    <?php endforeach; ?>
+</div>
+
+<section class="filter-photo-container">
+    <!-- photo filter by language -->
+    <?php foreach ($photos as $photo): ?>
+    <article class="photo filterDiv <?php foreach ($categories as $category): ?>
+            <?php if($category['photo'] === $photo['name']): ?>
+                <?=htmlspecialchars($category['tag']) ?>
+            <?php endif; ?>
+             <?php endforeach; ?>">
+        
+<!-- picture -->
+<figure>
+        <img src="<?=htmlspecialchars($photo['src']) ?>" alt="<?=htmlspecialchars($photo['alt']) ?>">
+    
+    <figcaption>
+        <div class="fig-title"><?=htmlspecialchars($photo['name']) ?></div>
+    </figcaption>
+</figure>
+
+     </article>
+    <?php endforeach; ?>
+</section>
