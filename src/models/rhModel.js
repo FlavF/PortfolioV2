@@ -1,7 +1,4 @@
-<?php
 
-class RHModel extends ModelManager
-{
     public function getOld()
     {
         $req = "SELECT start_date, end_date, name, location, description,type  
@@ -11,4 +8,3 @@ class RHModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
 
-}

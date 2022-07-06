@@ -1,9 +1,5 @@
-//? database
-const db = require("../db/db");
-
 //? Cloud datas
-
-async function getCloud() {
+exports.getCloud = async () => {
 	const data = await db.query("SELECT DISTINCT tag FROM CV_Cloud")
 
 	return {
@@ -11,6 +7,3 @@ async function getCloud() {
 	}
 }
 
-module.exports = {
-	getCloud
-}

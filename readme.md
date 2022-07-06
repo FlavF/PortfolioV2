@@ -33,11 +33,7 @@ Modules/librairies :
 - [mysql](https://www.npmjs.com/package/mysql): Version 2.18.1
 - [nodemon](https://www.npmjs.com/package/nodemon): Version 2.0.18 
 - [dotenv](https://www.npmjs.com/package/dotenv): Version 16.0.1
-- [body-parser](https://www.npmjs.com/package/body-parser): Version 1.20.0 
-- [cors](https://www.npmjs.com/package/cors): Version 2.8.5
 - [ejs](https://www.npmjs.com/package/ejs): Version 3.1.8
-
-
 
 
 
@@ -53,7 +49,7 @@ If not install, check : https://nodejs.org/en/
 
 Clone :
 ```
-$ git clone https://github.com/FlavF/MyBooks
+$ git clone https://github.com/FlavF/PortfolioV2
 ```
 
 or
@@ -68,8 +64,6 @@ $ npm i mysql
 $ npm install --save-dev nodemon //to not restart your node.js src/index.js everytime your changing your code
 $ npm i dotenv  //For .env
 //Create and Update your .env => look at ##Pages 
-$ npm i body-parser //for req.body
-$ npm i cors  // 
 $ npm install ejs // view engine
 
 ```
@@ -98,6 +92,7 @@ $ nodemon src/app.js
 - project : project done
 - opinion : rate the portfolio
 - message : send a message
+- error : if the page request doesn't exist
 
 <br/>
 
@@ -130,25 +125,25 @@ DB_PASSWORD =
 - Project
 - Rating
 - RH
-- User
+
 <br/>
 
 ### Use
 
 ---
-- My portfolio website : [Porfolio on line - About](https://flavproject.000webhostapp.com/CVPortfolio)
+- My portfolio website : [Porfolio online ](https://flavproject.000webhostapp.com/CVPortfolio)
 
-- to get to know me better : [Porfolio on line - About](https://flavproject.000webhostapp.com/CVPortfolio/about)
+- to get to know me better : [Porfolio online - About](https://flavproject.000webhostapp.com/CVPortfolio/about)
 
-- to run my projects : - to see my photographies : [Porfolio on line - Project](https://flavproject.000webhostapp.com/CVPortfolio/project)
+- to run my projects : - to see my photographies : [Porfolio online - Project](https://flavproject.000webhostapp.com/CVPortfolio/project)
 
-- to see my photographies : [Porfolio on line - Photos](https://flavproject.000webhostapp.com/CVPortfolio/photography)
+- to see my photographies : [Porfolio online - Photos](https://flavproject.000webhostapp.com/CVPortfolio/photography)
 
-- to add links on the page : [Porfolio on line - Links](https://flavproject.000webhostapp.com/CVPortfolio/link)
+- to add links on the page : [Porfolio online - Links](https://flavproject.000webhostapp.com/CVPortfolio/link)
 
-- to send your opinion about my website : [Porfolio on line - Opinion](https://flavproject.000webhostapp.com/CVPortfolio/opinion)
+- to send your opinion about my website : [Porfolio online - Opinion](https://flavproject.000webhostapp.com/CVPortfolio/opinion)
 
-- to send me a message : [Porfolio on line - Message](https://flavproject.000webhostapp.com/CVPortfolio/index.php?page=message)
+- to send me a message : [Porfolio online - Message](https://flavproject.000webhostapp.com/CVPortfolio/message)
 
 
 <br/>
@@ -161,7 +156,7 @@ DB_PASSWORD =
 - [ ] alert email when somebody add a link
 - [ ] not showing the tag when no links inside the box
 - [ ] add links I know of
-- [ ] get faster (see how to improve it ; Photographies size, code shorter, ...)
+- [ ] get faster (see how to improve it ; Photographies size, shorter code, ...)
 - [ ] English and French Version ?
 - [ ] In header : Possibility to do the menu via database + loop AND datas to collect : href; class ; id ; title; icon
 

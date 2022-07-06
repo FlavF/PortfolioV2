@@ -1,7 +1,3 @@
-<?php
-
-class ProjectModel extends ModelManager
-{
 
      public function getProjects()
     {
@@ -24,6 +20,3 @@ class ProjectModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
     
-         
-    
-}

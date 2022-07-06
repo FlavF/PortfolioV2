@@ -1,7 +1,6 @@
-<?php
+// TODO : add a table to stock the data when star add
 
-class RatingModel extends ModelManager
-{
+
     
     // How many Stars ?
     
@@ -90,5 +89,3 @@ class RatingModel extends ModelManager
     
     
     
-    
-}

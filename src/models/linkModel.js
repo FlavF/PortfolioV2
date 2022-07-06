@@ -1,8 +1,4 @@
-<?php
 
-class LinkModel extends ModelManager
-{
-    
     //show links list
     public function getLinks()
     {

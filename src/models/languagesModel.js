@@ -1,8 +1,4 @@
-<?php
 
-class LanguagesModel extends ModelManager
-{
-    
     //show all pictures
     public function getLanguages()
     {
@@ -12,4 +8,3 @@ class LanguagesModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
     
-}

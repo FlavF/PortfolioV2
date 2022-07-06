@@ -1,10 +1,11 @@
+<%- include('../partials/header') -%>
 <section>
     <h1 id="#links">Liens utiles</h1>
 
     <!-- ADD Link -->
     <div>
         <h2>Proposer un lien</h2>
-        <form action="index.php?page=addLink" method="POST">
+        <form action="/link/addLink" method="POST">
             <!-- Choose Category-->
             <p>
                 <label for="id_tag">Lié à la catégorie :</label>
@@ -76,3 +77,5 @@
     </div>
 
 </section>
+
+<%- include('../partials/footer') -%>

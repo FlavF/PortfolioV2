@@ -1,151 +1,152 @@
 <%- include('../partials/header') -%>
 <section class="page-about">
-    <h1 id="#about"><%= title %></h1>
-
+    <h1 id="#about">Flavia</h1>
+    
     <!-- Button to download the CV -->
     <a href="img/CV - FONTAINE Flavia - Developpeuse Back End 2022.pdf" download rel="noopener noreferrer" target="_blank" class="download-cv">
         Pour télécharger le CV sous PDF :
         <i class="fas fa-file-export"></i>
     </a>
+    
+    <%= data =>
 
-    <!-- Cloud with words -->
-    <article>
-        <h2>Qui-suis-je ?</h2>
-        <div>
-            <ul class="tags">
-                <% clouds.forEach((cloud)=> { %>
-                    <li class="tag">
-                        <a class="tag__link" href="https://pixabay.com/fr/images/search/<%= cloud.tag %>/" target="_blank">
-                            <%= cloud.tag %>
-                        </a>
-                    </li>
-                <% }) %>
-            </ul>
-        </div>
-    </article>
-
-    <!-- languages it -->
-    <article>
-        <h2>Intégration - Développement web</h2>
-        <div class="languages-it">
-            <!-- TODO Pictures-->
-                <div class="circular-sb <!-- TODO Pictures percentage-->">
-                    <span><!-- TODO Pictures --></span>
-                    <span><img class="small-language" src="<!-- TODO Pictures src-->" alt="<!-- TODO Pictures alt-->"></span>
-                </div>      
-            <!-- TODO Pictures end-->
-        </div>
-    </article>
-
-<!-- Certifications -->
- <article>
-        <h2>Certifications</h2>
-        <div class="certifications-it">
-            <!-- TODO Certifications-->
-            <p>
-                <span><!-- TODO Certifications dates--></span>
-                <span><a href="<!-- TODO Certifications src -->" alt="<!-- TODO Certifications alt -->"><!-- TODO Certifications name--></a></span>            
-            </p>
-            <!-- TODO Certifications end-->
-        </div>
- </article>
-
-    <!-- experiences -->
-    <!-- experience IT -->
-    <article>
-        <h2>Formations et jobs IT</h2>
-        <div class="timeline">
-            <!-- TODO IT -->
-
-                <!-- TODO IT if ($it['type'] === "job")-->
+        <article>
+            <h2>Qui-suis-je ?</h2>
+            <div>
+                <ul class="tags">
+                    <% clouds.forEach((cloud)=> { %>
+                        <li class="tag">
+                            <a class="tag__link" href="https://pixabay.com/fr/images/search/<%= cloud.tag %>/" target="_blank">
+                                <%= cloud.tag %>
+                            </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </article>
+            
+            <!-- languages it -->
+            <article>
+                <h2>Intégration - Développement web</h2>
+                <div class="languages-it">
+                    <!-- TODO Pictures-->
+                    <div class="circular-sb <!-- TODO Pictures percentage-->">
+                        <span><!-- TODO Pictures --></span>
+                        <span><img class="small-language" src="<!-- TODO Pictures src-->" alt="<!-- TODO Pictures alt-->"></span>
+                    </div>      
+                    <!-- TODO Pictures end-->
+                </div>
+            </article>
+            
+            <!-- Certifications -->
+            <article>
+                <h2>Certifications</h2>
+                <div class="certifications-it">
+                    <!-- TODO Certifications-->
+                    <p>
+                        <span><!-- TODO Certifications dates--></span>
+                        <span><a href="<!-- TODO Certifications src -->" alt="<!-- TODO Certifications alt -->"><!-- TODO Certifications name--></a></span>            
+                    </p>
+                    <!-- TODO Certifications end-->
+                </div>
+            </article>
+            
+            <!-- experiences -->
+            <!-- experience IT -->
+            <article>
+                <h2>Formations et jobs IT</h2>
+                <div class="timeline">
+                    <!-- TODO IT -->
+                    
+                    <!-- TODO IT if ($it['type'] === "job")-->
                     <div class="container-about right">
                         <div class="content">
                             <!-- TODO IT if ($it['start_date'] === $it['end_date'] -->
-                                <h2><!-- TODO IT $it['start_date']--></h2>
+                            <h2><!-- TODO IT $it['start_date']--></h2>
                             <!-- TODO IT else-->
-                                <h2><!-- TODO IT ['start_date']--> - !-- TODO IT ['end_date']--></h2>
+                            <h2><!-- TODO IT ['start_date']--> - !-- TODO IT ['end_date']--></h2>
                             <!-- TODO IT endif -->
                             <h3><!-- TODO IT ['name'])--></h3>
                             <h4><!-- TODO IT ['location'])--></h4>
                             <p><!-- TODO IT ['description'])--></p>
                         </div>
                     </div>
-                <!-- TODO IT endif-->
-
-                <!-- TODO IT if ($it['type'] === "formation") -->
+                    <!-- TODO IT endif-->
+                    
+                    <!-- TODO IT if ($it['type'] === "formation") -->
                     <div class="container-about left">
                         <div class="content">
                             <!-- TODO IT if ($it['start_date'] === $it['end_date']) --> 
-                                <h2><!-- TODO IT ['start_date'])--></h2>
+                            <h2><!-- TODO IT ['start_date'])--></h2>
                             <!-- TODO IT else-->
-                                <h2><!-- TODO IT ['start_date'])--> - <!-- TODO IT ['end_date']--></h2>
+                            <h2><!-- TODO IT ['start_date'])--> - <!-- TODO IT ['end_date']--></h2>
                             <!-- TODO IT endif-->
                             <h3><!-- TODO IT ['name']--></h3>
                             <h4><!-- TODO IT ['location'])--></h4>
                             <p><!-- TODO IT ['description'])--></p>
                         </div>
                     </div>
-                <!-- TODO IT endif-->
-
-            <!-- TODO IT end -->
-        </div>
-    </article>
-
-    <!-- Languages english, spanish, japanese-->
-    <article>
-        <h2>Langues</h2>
-        <div class="languages">
-            <!-- TODO foreach languages -->
-                <p>
-                    <img class="small-language" src="<!-- TODO languages src -->" alt="<!-- TODO languages alt -->">
-                    <span> : <!-- TODO languages level-->
-                    </span>
-                </p>
-            <!-- TODO languages endforeach -->
-        </div>
-    </article>
-
-    <!-- Old jobs HR not IT -->
-    <article>
-        <h2>Mes anciens jobs et formations</h2>
-
-        <div class="timeline">
-            <?php foreach ($aboutOld as $old) : ?>
-
-                <?php if ($old['type'] === "job") : ?>
+                    <!-- TODO IT endif-->
+                    
+                    <!-- TODO IT end -->
+                </div>
+            </article>
+            
+            <!-- Languages english, spanish, japanese-->
+            <article>
+                <h2>Langues</h2>
+                <div class="languages">
+                    <!-- TODO foreach languages -->
+                    <p>
+                        <img class="small-language" src="<!-- TODO languages src -->" alt="<!-- TODO languages alt -->">
+                        <span> : <!-- TODO languages level-->
+                        </span>
+                    </p>
+                    <!-- TODO languages endforeach -->
+                </div>
+            </article>
+            
+            <!-- Old jobs HR not IT -->
+            <article>
+                <h2>Mes anciens jobs et formations</h2>
+                
+                <div class="timeline">
+                    <?php foreach ($aboutOld as $old) : ?>
+                    
+                    <?php if ($old['type'] === "job") : ?>
                     <div class="container-about right">
                         <div class="content">
                             <?php if ($old['start_date'] === $old['end_date']) : ?>
-                                <h2><?= htmlspecialchars($old['start_date']) ?></h2>
+                            <h2><?= htmlspecialchars($old['start_date']) ?></h2>
                             <?php else : ?>
-                                <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
+                            <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
                             <?php endif; ?>
                             <h3><?= htmlspecialchars($old['name']) ?></h3>
                             <h4><?= htmlspecialchars($old['location']) ?></h4>
                             <p><?= htmlspecialchars($old['description']) ?></p>
                         </div>
                     </div>
-                <?php endif; ?>
-
-                <?php if ($old['type'] === "formation") : ?>
+                    <?php endif; ?>
+                    
+                    <?php if ($old['type'] === "formation") : ?>
                     <div class="container-about left">
                         <div class="content">
                             <?php if ($old['start_date'] === $old['end_date']) : ?>
-                                <h2><?= htmlspecialchars($old['start_date']) ?></h2>
+                            <h2><?= htmlspecialchars($old['start_date']) ?></h2>
                             <?php else : ?>
-                                <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
+                            <h2><?= htmlspecialchars($old['start_date']) ?> - <?= htmlspecialchars($old['end_date']) ?></h2>
                             <?php endif; ?>
                             <h3><?= htmlspecialchars($old['name']) ?></h3>
                             <h4><?= htmlspecialchars($old['location']) ?></h4>
                             <p><?= htmlspecialchars($old['description']) ?></p>
                         </div>
                     </div>
-                <?php endif; ?>
-
-            <?php endforeach; ?>
-        </div>
-    </article>
-</section>
-
-
-<%- include('../partials/footer') -%>
+                    <?php endif; ?>
+                    
+                    <?php endforeach; ?>
+                </div>
+            </article>
+        </section>
+        
+        
+        <%- include('../partials/footer') -%>

@@ -1,7 +1,3 @@
-<?php
-
-class PhotographiesModel extends ModelManager
-{
     //Get picture name and info
      public function getPhotos()
     {
@@ -35,5 +31,3 @@ class PhotographiesModel extends ModelManager
         return $this -> queryFetchAll($req);
     }
 
-
-}
