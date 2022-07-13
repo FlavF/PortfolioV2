@@ -10,8 +10,9 @@ const router = new express.Router();
 //? Page Link
 router.get("/", linkController.getLink);
 
+
 //? To add a link
-router.get("/addLink", linkController.addLink)
+router.post("/addLink", linkController.addLink)
 
 
 module.exports = router;

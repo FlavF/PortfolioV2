@@ -1,35 +1,40 @@
 <%- include('../partials/header') -%>
 <section>
     <h1 id="#links">Liens utiles</h1>
-
+    
     <!-- ADD Link -->
     <div>
         <h2>Proposer un lien</h2>
         <form action="/link/addLink" method="POST">
             <!-- Choose Category-->
             <p>
-                <label for="id_tag">Lié à la catégorie :</label>
-                <select name="id_tag" id="id_tag">
-                    <?php foreach($tags as $tag ): ?>
-                    <option value="<?=htmlspecialchars($tag['id_tag']) ?>">
-                        <?=htmlspecialchars($tag['tag']) ?>
-                    </option>
-                    <?php endforeach; ?>
-                </select>
+                <label for="id_tag">Lié à la catégorie </label>
+                <p>
+                    <select name="id_tag" id="id_tag">
+                        <option value="1">
+                            values 1
+                        </option>
+                    </select>
+                </p>
+                
             </p>
             <!-- Link name -->
             <p>
                 <label for="link">Nom du lien</label>
-                <input type="text" name="link" id="link">
+                <p> 
+                    <input type="text" name="link" id="link">
+                </p>
             </p>
             <!-- url -->
             <p>
                 <label for="url">Le lien</label>
-                <input type="text" name="url" id="url">
+                <p>
+                    <input type="text" name="url" id="url">
+                </p>
             </p>
             <!-- title/comment-->
             <p>
-                <legend for="title">Texte decrivant le lien</legend>
+                <legend for="title">Texte décrivant le lien</legend>
                 <Textarea id="title" name="title" rows="5" cols="33"></Textarea>
             </p>
             <!-- submit the form-->
@@ -38,11 +43,11 @@
             </p>
         </form>
         <?php if(isset($_GET['answer'])): ?>
-            <?=$_GET['answer'] ?>
+        <?=$_GET['answer'] ?>
         <?php endif; ?>
     </div>
-
-<!-- List of links -->
+    
+    <!-- List of links -->
     <h2>Les liens</h2>
     <div class="links">
         <!-- Tags -->
@@ -51,19 +56,24 @@
             <table>
                 <!-- Category -->
                 <?php foreach($linksTags as $linkTag): ?>
-                    <?php if(isset($linkTag['tag']) && $linkTag['tag'] === $tag['tag']) :?>
-                <caption><?=htmlspecialchars($linkTag['tag']) ?></caption>
-                    <?php endif; ?>
+                <?php if(isset($linkTag['tag']) && $linkTag['tag'] === $tag['tag']) :?>
+                <caption>
+                    <?=htmlspecialchars($linkTag['tag']) ?>
+                </caption>
+                <?php endif; ?>
                 <?php endforeach; ?>
                 <tbody>
                     <?php foreach($links as $link): ?>
-                        <?php if(isset($link['link']) && !empty($link['link'])) :?>
-                        <?php if($link['level'] == 1) :?>
-                        <?php if($tag['id_tag'] === $link['id_tag']) :?>
+                    <?php if(isset($link['link']) && !empty($link['link'])) :?>
+                    <?php if($link['level'] == 1) :?>
+                    <?php if($tag['id_tag'] === $link['id_tag']) :?>
                     <tr>
                         <td>
                             <!-- Link -->
-                            <a href="<?=htmlspecialchars($link['url']) ?>" title="<?=htmlspecialchars($link['title']) ?>" target="_blank"><?=htmlspecialchars($link['link']) ?></a>
+                            <a href="<?=htmlspecialchars($link['url']) ?>"
+                                title="<?=htmlspecialchars($link['title']) ?>" target="_blank">
+                                <?=htmlspecialchars($link['link']) ?>
+                            </a>
                         </td>
                         <?php endif; ?>
                         <?php endif; ?>
@@ -75,7 +85,7 @@
         </article>
         <?php endforeach; ?>
     </div>
-
+    
 </section>
 
 <%- include('../partials/footer') -%>
