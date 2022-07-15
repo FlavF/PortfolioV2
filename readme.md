@@ -1,4 +1,5 @@
 # Portofolio V2 (monthly update)
+
 ## Table of Contents
 
 1. [General Info](#general-info)
@@ -30,11 +31,11 @@ My personal CV to promote myself.
 - [MySQL](https://www.mysql.com/)
 
 Modules/librairies :
-- [mysql2](https://www.npmjs.com/package/mysql2): Version 2.3.3
 - [nodemon](https://www.npmjs.com/package/nodemon): Version 2.0.19 
 - [dotenv](https://www.npmjs.com/package/dotenv): Version 16.0.1
 - [ejs](https://www.npmjs.com/package/ejs): Version 3.1.8
 - [sequelize](https://sequelize.org): Version 6.21.3
+- [mysql2](https://www.npmjs.com/package/mysql2): Version 2.3.3
 - [sequelize-auto ](https://github.com/sequelize/sequelize-auto): Version 0.8.8
 
 
@@ -60,13 +61,15 @@ or
 $ cd ../path/to/the/file
 $ npm init
 $ npm install express --save
-$ npm i mysql
-$ npm install --save-dev nodemon //to not restart your node.js src/index.js everytime your changing your code
-$ npm i dotenv  //For .env
-//Create and Update your .env => look at ##Pages 
-$ npm install ejs // view engine
+//to not restart your node.js src/index.js everytime your changing your code
+$ npm install --save-dev nodemon 
+//For .env
+$ npm i dotenv  
+// view engine
+$ npm install ejs 
 
 ```
+- Create and Update your .env => look at ##Pages
 
 - To start the app and check it
 
@@ -78,6 +81,11 @@ $ nodemon src/app.js
 
 - To install sequelize for mysql :
 [Sequelize](https://sequelize.org/docs/v6/getting-started/)
+
+```
+$ npm install sequelize mysql2
+```
+
 
 - To install models for a database already built :
 [Sequelize-Auto](https://github.com/sequelize/sequelize-auto)
@@ -178,7 +186,9 @@ PORT =
 
 ---
 - [ ] Go from V1 PHP to V2 Node.js (keeps : CSS, JS, Views, database datas)
+- [ ] send a message to client to tell the link was sent
 - [ ] % language better design (maybe not a circle, color for starter, senior)
+- [ ] has one, belongs in models/init-models (pb : I changed Models, put back ?)
 - [ ] alert email when somebody add a link
 - [ ] not showing the tag when no links inside the box
 - [ ] loop to remake in Link page

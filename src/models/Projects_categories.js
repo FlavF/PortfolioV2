@@ -1,6 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Projects_categories', {
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../db/db");
+
+const Projects_categories = sequelize.define('Projects_categories', {
     id_project: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -38,4 +40,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  module.exports = Projects_categories;

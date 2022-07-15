@@ -1,6 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Languages_it', {
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../db/db");
+
+const Languages_it = sequelize.define('Languages_it', {
     id_language_it: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -42,4 +44,6 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+  
+  module.exports = Languages_it;

@@ -1,6 +1,8 @@
-const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('Photographies_tags', {
+const { DataTypes } = require("sequelize");
+
+const sequelize = require("../db/db");
+
+const Photographies_tags = sequelize.define('Photographies_tags', {
     id_tag: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
@@ -26,4 +28,5 @@ module.exports = function(sequelize, DataTypes) {
       },
     ]
   });
-};
+
+module.exports = Photographies_tags;

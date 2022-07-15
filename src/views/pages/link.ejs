@@ -1,91 +1,84 @@
 <%- include('../partials/header') -%>
 <section>
-    <h1 id="#links">Liens utiles</h1>
-    
-    <!-- ADD Link -->
-    <div>
-        <h2>Proposer un lien</h2>
-        <form action="/link/addLink" method="POST">
-            <!-- Choose Category-->
-            <p>
-                <label for="id_tag">Lié à la catégorie </label>
-                <p>
-                    <select name="id_tag" id="id_tag">
-                        <option value="1">
-                            values 1
-                        </option>
-                    </select>
-                </p>
-                
-            </p>
-            <!-- Link name -->
-            <p>
-                <label for="link">Nom du lien</label>
-                <p> 
-                    <input type="text" name="link" id="link">
-                </p>
-            </p>
-            <!-- url -->
-            <p>
-                <label for="url">Le lien</label>
-                <p>
-                    <input type="text" name="url" id="url">
-                </p>
-            </p>
-            <!-- title/comment-->
-            <p>
-                <legend for="title">Texte décrivant le lien</legend>
-                <Textarea id="title" name="title" rows="5" cols="33"></Textarea>
-            </p>
-            <!-- submit the form-->
-            <p>
-                <button type="submit">Ajouter</button>
-            </p>
-        </form>
-        <?php if(isset($_GET['answer'])): ?>
-        <?=$_GET['answer'] ?>
-        <?php endif; ?>
+  <h1 id="#links">Liens utiles</h1>
+  
+  <!-- ADD Link -->
+  <div>
+    <h2>Proposer un lien</h2>
+    <form action="/link/addLink" method="POST">
+      <!-- Choose Category-->
+      <p>
+        <label for="id_tag">Lié à la catégorie
+        </label>
+        <p>
+          <select name="id_tag" id="id_tag">
+            <% tags.forEach(tag=> { %>
+              <option value="<%= tag.id_link_tag %>">
+                <%= tag.link_tag %>
+              </option>
+              <% }) %>
+            </select>
+          </p>
+          
+        </p>
+        <!-- Link name -->
+        <p>
+          <label for="link">Nom du lien</label>
+          <p>
+            <input type="text" name="link" id="link">
+          </p>
+        </p>
+        <!-- url -->
+        <p>
+          <label for="url">Le lien</label>
+          <p>
+            <input type="text" name="url" id="url">
+          </p>
+        </p>
+        <!-- title/comment-->
+        <p>
+          <legend for="title">Texte décrivant le lien</legend>
+          <textarea id="title" name="title" rows="5" cols="33"></textarea>
+        </p>
+        <!-- submit the form-->
+        <p>
+          <button type="submit">Ajouter</button>
+        </p>
+      </form>
+      <!-- TODO: add information sending link add -->
     </div>
     
     <!-- List of links -->
     <h2>Les liens</h2>
     <div class="links">
-        <!-- Tags -->
-        <?php foreach($tags as $tag): ?>
+      <!-- Tags -->
+      <% tags.forEach(tag=> { %>
         <article class="category">
-            <table>
-                <!-- Category -->
-                <?php foreach($linksTags as $linkTag): ?>
-                <?php if(isset($linkTag['tag']) && $linkTag['tag'] === $tag['tag']) :?>
-                <caption>
-                    <?=htmlspecialchars($linkTag['tag']) ?>
-                </caption>
-                <?php endif; ?>
-                <?php endforeach; ?>
-                <tbody>
-                    <?php foreach($links as $link): ?>
-                    <?php if(isset($link['link']) && !empty($link['link'])) :?>
-                    <?php if($link['level'] == 1) :?>
-                    <?php if($tag['id_tag'] === $link['id_tag']) :?>
-                    <tr>
-                        <td>
-                            <!-- Link -->
-                            <a href="<?=htmlspecialchars($link['url']) ?>"
-                                title="<?=htmlspecialchars($link['title']) ?>" target="_blank">
-                                <?=htmlspecialchars($link['link']) ?>
-                            </a>
-                        </td>
-                        <?php endif; ?>
-                        <?php endif; ?>
-                        <?php endif; ?>
-                    </tr>
-                    <?php endforeach; ?>
+          <table>
+            <!-- Category -->
+            <caption>
+              <%= tag.link_tag %>
+            </caption>
+            <tbody>
+              <% links.forEach(link=> { %>
+                <% if (link.id_link_tag === tag.id_link_tag) { %>
+                  <tr>
+                    <td>
+                      <!-- Link -->
+                      <a href="<%= link.url %>" title="<%= link.title %>" target="_blank">
+                        <%= link.link %>
+                      </a>
+                    </td>
+                  </tr>
+                  <% } %>
+                  <% }) %>
                 </tbody>
-            </table>
-        </article>
-        <?php endforeach; ?>
-    </div>
-    
-</section>
-
-<%- include('../partials/footer') -%>
+              </table>
+            </article>
+            <% }) %>
+          </div>
+          
+        </section>
+        
+        <%- include('../partials/footer') -%>
+        

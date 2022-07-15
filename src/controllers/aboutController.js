@@ -6,6 +6,7 @@ const languagesit = require("../models/Languages_it")
 const languages = require("../models/CV_Languages")
 const rh = require("../models/CV_RH")
 
+//? Controller
 exports.getAbout = (req,res,next) => {
      let sql = `SELECT DISTINCT tag FROM CV_Cloud`;
     db.query(sql, function (err, cloud) {
