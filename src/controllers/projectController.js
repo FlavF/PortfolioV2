@@ -1,31 +1,31 @@
 //? Models
-const projectModel = require("../models/projectModel")
+const Projects = require("../models/Projects");
+const Projects_categories = require("../models/Projects_categories");
+const Languages_it = require("../models/Languages_it")
 
 
 //? Project Controller
-exports.getProject = (req, res, next) => {
-	res.render("pages/project");
+exports.getProject = async function (req, res, next) {
+    
+    const projects = await Projects.findAll({
+        distinct: "name",
+        order : [["name"]]
+    })
+    
+    const projectsCategories = await Projects_categories.findAll({
+        distinct : Projects.name,
+        include: Projects,
+        Languages_it,
+    });
+    
+    const languagesIt = await Languages_it.findAll({
+        order:[[Languages_it.name]]
+    })
+    
+    res.render("pages/project", {
+        projects,
+        projectsCategories, 
+        languagesIt
+    });
 };
 
-
-    //  public function getProjects()
-    // {
-    //     $req = "SELECT DISTINCT Projects.name as project, description, Projects.src as src, Projects.link as link, Projects.alt as alt, data_base, data_base_alt
-    //     FROM Projects";
-
-    //     return $this -> queryFetchAll($req);
-    // }
-    
-    // //show all items 
-    // public function getProjectsCategories()
-    // {
-    //     $req = "SELECT DISTINCT Projects.name as project,Languages_it.name as languages_IT
-    //     FROM Projects_categories
-    //     LEFT JOIN Projects
-    //      ON Projects_categories.id_project = Projects.id_project
-    //     LEFT JOIN Languages_it 
-    //      ON Projects_categories.id_language_it = Languages_it.id_language_it";
-
-    //     return $this -> queryFetchAll($req);
-    // }
-    

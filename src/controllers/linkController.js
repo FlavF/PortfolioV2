@@ -1,13 +1,11 @@
 //? Models
 const Links = require("../models/Links");
 const LinksTags = require("../models/Links_tags");
-const sequelize = require("sequelize")
 
 //? Link Controller
 //? get the page link
 exports.getLink = async function (req, res, next) {
 	
-
 	const tags = await LinksTags.findAll({
 		distinct: "link_tag",
 		order: [["link_tag"]],
@@ -26,6 +24,7 @@ exports.getLink = async function (req, res, next) {
 		});
 	};
 	
+	//TODO add a message when the link is added
 	//? To add a link
 	exports.addLink = async function (req, res, next) {
 		const idTag = req.body.id_tag;
