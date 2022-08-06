@@ -2,10 +2,6 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../db/db");
 
-// ? Models call
-const Languages_it = require ("./Languages_it")
-const Projects = require("./Projects")
-
 const Projects_categories = sequelize.define('Projects_categories', {
   id_project: {
     type: DataTypes.INTEGER,
@@ -43,18 +39,6 @@ const Projects_categories = sequelize.define('Projects_categories', {
       ]
     },
   ]
-});
-
-Projects_categories.belongsTo(Languages_it, {
-  as: "id_language_it_Languages_it",
-  foreignKey: "id_language_it",
-  targetKey : "id_language_it"
-});
-
-Projects_categories.belongsTo(Projects, {
-	as: "id_project_Project",
-	foreignKey: "id_project",
-	targetKey: "id_project",
 });
 
 

@@ -3,6 +3,7 @@ const path = require("path")
 const express = require("express")
 const bodyParser = require("body-parser")
 const cors = require ("cors")
+const ejsLint = require("ejs-lint");
 
 //? DATABASE Setup
 const sequelize = require("./db/db")
@@ -18,9 +19,9 @@ const homeRouter = require("./routes/homeRoute")
 // const aboutRouter = require("./routes/aboutRoute")
 const linkRouter = require("./routes/linkRoute");
 // const messageRouter = require("./routes/messageRoute");
-// const opinionRouter = require("./routes/opininRoute");
+const opinionRouter = require("./routes/opinionRoute");
 // const photographyRouter = require("./routes/photgraphyRoute");
-const projectRouter = require("./routes/projectRoute");
+//const projectRouter = require("./routes/projectRoute");
 
 //? Paths
 const publicDirectoryPath = path.join(__dirname,"../public")
@@ -44,9 +45,9 @@ app.use("/",homeRouter)
 // app.use("/about",aboutRouter)
 app.use("/link", linkRouter);
 // app.use("/message", messageRouter);
-// app.use("/opinion", opinionRouter);
+app.use("/opinion", opinionRouter);
 // app.use("/photography", photographyRouter);
-app.use("/project", projectRouter);
+// app.use("/project", projectRouter);
 
 app.use(errorController.getError404)
 

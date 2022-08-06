@@ -11,7 +11,7 @@ exports.getAbout = (req,res,next) => {
      let sql = `SELECT DISTINCT tag FROM CV_Cloud`;
     db.query(sql, function (err, cloud) {
         if (err) throw err;
-        res.render("page/about",{
+        res.render("pages/about",{
             data
         })
     })

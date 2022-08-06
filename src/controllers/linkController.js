@@ -27,20 +27,19 @@ exports.getLink = async function (req, res, next) {
 	//TODO add a message when the link is added
 	//? To add a link
 	exports.addLink = async function (req, res, next) {
-		const idTag = req.body.id_tag;
-		const link = req.body.link;
-		const url = req.body.url;
-		const title = req.body.title;
-		
-		await Links.create({
-			link,
-			url,
-			title,
-			id_link_tag: idTag,
-		})
+
+		const newLink = {
+			link:req.body.link ,
+			url: req.body.url,
+			title:req.body.title ,
+			id_link_tag: req.body.id_tag,
+		};
+			
+		await Links.create(newLink)
 		.then((result) => {
 			console.log(result);
-			res.redirect("/link");
+			// res.redirect("/link");
+			res.render("/link", {message : "Merci d'avoir ajouter un nouveau lien."})
 		})
 		.catch((err) => console.log(err));
 	};

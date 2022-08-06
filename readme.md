@@ -24,7 +24,7 @@ My personal CV to promote myself.
 ### Stacks
 
 ---
-- [Node.js](https://nodejs.org/en/): Version 18.2.0
+- [Node.js](https://nodejs.org/en/): Version 18.5.0
 - [Express](https://expressjs.com/): Version 4.18.1
 - [JavaScript]()
 - [CSS]()
@@ -34,6 +34,7 @@ Modules/librairies :
 - [nodemon](https://www.npmjs.com/package/nodemon): Version 2.0.19 
 - [dotenv](https://www.npmjs.com/package/dotenv): Version 16.0.1
 - [ejs](https://www.npmjs.com/package/ejs): Version 3.1.8
+- [EJS-Lint](https://www.npmjs.com/package/ejs-lint/v/1.1.0) : Version 1.1.0
 - [sequelize](https://sequelize.org): Version 6.21.3
 - [mysql2](https://www.npmjs.com/package/mysql2): Version 2.3.3
 - [sequelize-auto ](https://github.com/sequelize/sequelize-auto): Version 0.8.8
@@ -62,11 +63,13 @@ $ cd ../path/to/the/file
 $ npm init
 $ npm install express --save
 //to not restart your node.js src/index.js everytime your changing your code
-$ npm install --save-dev nodemon 
+$ npm install --save-dev nodemon
 //For .env
 $ npm i dotenv  
 // view engine
 $ npm install ejs 
+// Check ejs syntax
+$ npm install -g ejs-lint
 
 ```
 - Create and Update your .env => look at ##Pages
@@ -101,9 +104,6 @@ $ sequelize-auto -o "./models" -d sequelize_auto_test -h localhost -u my_usernam
 ```
 $ node ./node_modules/sequelize-auto/bin/sequelize-auto -o "src/models" -d databasename -h host -u user -p 3306 -x password -e mysql
 ```
-
-
-
 
 <br/>
 
@@ -185,19 +185,39 @@ PORT =
 ### TODO
 
 ---
-- [ ] Go from V1 PHP to V2 Node.js (keeps : CSS, JS, Views, database datas)
-- [ ] send a message to client to tell the link was sent
-- [ ] % language better design (maybe not a circle, color for starter, senior)
-- [ ] has one, belongs in models/init-models (pb : I changed Models, put back ?)
-- [ ] alert email when somebody add a link
-- [ ] not showing the tag when no links inside the box
-- [ ] loop to remake in Link page
-- [ ] add links I know of
-- [ ] color design to rethink and change
-- [ ] get faster (see how to improve it ; Photographies size, shorter code, ...)
-- [ ] English and French Version ?
-- [ ] In header : Possibility to do the menu via database + loop AND datas to collect : href; class ; id ; title; icon
-- [ ] to load on firebase or heroku
+- [ ] website : Go from V1 PHP to V2 Node.js (keeps : CSS, JS, Views, database datas)
+    - [ ] database : has one, belongs in models/init-models (pb : I changed Models, put back ?)
+    
+    - [ ] about page : V1 to V2
+        - [ ] about page : % language better design (maybe not a circle, color for starter, junior/ senior) => stars ?
+    
+    - [X] error page : V1 to V2
+
+    - [X] home page : V1 to V2
+   
+    - [X] link page : V1 to V2
+         - [ ] link page : alert email when somebody add a link
+         - [ ] link page : not showing the tag when no links inside the box
+         - [X] link page : loop to remake in Link page
+         - [ ] link page / database :add links I know of
+
+    - [ ] message page : V1 to V2
+
+    - [ ] opinion page : V1 to V2
+        - [X] partials for svg (more clear code)
+        - [ ] manage the pb with ip address 
+
+    - [ ] photography page : V1 to V2
+
+    - [ ] project page : V1 to V2
+
+    - [ ] In header : Possibility to do the menu via database + loop AND datas to collect : href; class ; id ; title; icon
+
+- [ ] website : color design to rethink and change
+- [ ] website : get faster (see how to improve it ; Photographies size, shorter code, ...)
+- [ ] website : English and French Version ?
+
+- [ ] website : to load on firebase or heroku
 
 <br/>
 

@@ -1,52 +1,52 @@
 <%- include('../partials/header') -%>
-<h1 id="#projects">Projets</h1>
+  <h1 id="#projects">Projets</h1>
 
-<!-- Filter button-->
-<div id="myBtnContainer" class="btn-container">
+  <!-- Filter button-->
+  <div id="myBtnContainer" class="btn-container">
     <button class="btn active" onclick="filterSelection('all')">Tous</button>
     <% languagesIt.forEach(it=> { %>
-        <button class="btn"
-        onclick="filterSelection('<%= it.name %>')">
+      <button class="btn" onclick="filterSelection('<%= it.name %>')">
         <%= it.name %></button>
-        <%}) %>
-    </div>
-    
-    <section class="filter-container">
+      <%}) %>
+      </div>
+
+      <section class="filter-container">
         <!-- project filter by language -->
         <% projects.forEach(project => { %>
-            <article class="project filterDiv <% projectsCategories.forEach(projectCategorie => { %>
-                <% if(projectCategorie.project === project.project) { %>
+          <article class="project filterDiv <% projectsCategories.forEach(projectCategorie => { %>
+                <% if(projectCategorie.project === project.name) { %>
                     <%= projectCategorie.name %>
                     <% } %>
                     <% }) %>
-                    
+
                     <!-- Project name  -->
-                    <h2><%= project.project %></h2>
-                    
+                    <h2><%= project.name %></h2>
+
                     <!-- Tag languages -->
-                    <p class="project-languages"> <% projectsCategories.forEach(projectCategorie => { %>
-                        <% if(projectCategorie.project === project.project) { %>
-                            <%= projectCategorie.name %>
-                            <%= projectCategorie.languages_IT %>
-                            <% } %>
-                            <% }) %>
-                        </p>
-                        
-                        <!-- Project  description -->
-                        <p><%= project.description %></p>
-                        
-                        <!-- link project-->
-                        <a href="<%= project.src %>" target="_blank">
-                            <img src="<%= project.link %>" alt="<%= project.alt %>"></a>
-                            
-                            <!-- Database -->
-                            <% if(project.data_base %>
-                            <a href="<%= project.data_base %>" target="_blank">
-                                <img src="<%= project.data_base %>" alt="<%= project.data_base_alt %>"></a>
-                                <% } %>
-                                
-                            </article>
-                            <% }) %>
-                        </section>
-                        
-                        <%- include('../partials/footer') -%>
+                    <p class="project-languages">
+            <% projectsCategories.forEach(projectCategorie => { %>
+              <% if(projectCategorie.project === project.name) { %>
+                <%= projectCategorie.name %>
+                <%= projectCategorie.languages_IT %>
+              <% } %>
+              <% }) %>
+              </p>
+
+              <!-- Project description -->
+              <p><%= project.description %></p>
+
+              <!-- link project-->
+              <a href="<%= project.src %>" target="_blank">
+                <img src="<%= project.link %>" alt="<%= project.alt %>"></a>
+
+              <!-- Database -->
+              <% if(project.data_base %>
+                <a href="<%= project.data_base %>" target="_blank">
+                  <img src="<%= project.data_base %>" alt="<%= project.data_base_alt %>"></a>
+              <% } %>
+
+            </article>
+            <% }) %>
+            </section>
+
+            <%- include('../partials/footer') -%>

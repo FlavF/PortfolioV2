@@ -2,8 +2,6 @@ const { DataTypes } = require("sequelize");
 
 const sequelize = require("../db/db");
 
-const Projects_categories = require("./Projects_categories")
-
 const Projects = sequelize.define('Projects', {
   id_project: {
     autoIncrement: true,
@@ -55,14 +53,6 @@ const Projects = sequelize.define('Projects', {
     },
   ]
 });
-
-
-Projects.hasMany(Projects_categories, {
-  as: "Projects_categories",
-  foreignKey: "id_project",
-  sourceKey: "id_project"
-});
-
 
 
 

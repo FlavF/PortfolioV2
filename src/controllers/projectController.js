@@ -1,30 +1,29 @@
 //? Models
-const Projects = require("../models/Projects");
-const Projects_categories = require("../models/Projects_categories");
-const Languages_it = require("../models/Languages_it")
-
+const initModels = require("../models/init-models");
+const sequelize = require("sequelize")
+const models = initModels(sequelize)
 
 //? Project Controller
 exports.getProject = async function (req, res, next) {
     
-    const projects = await Projects.findAll({
+    const projects = await models.Projects.findAll({
         distinct: "name",
         order : [["name"]]
     })
     
-    const projectsCategories = await Projects_categories.findAll({
-        distinct : Projects.name,
-        include: Projects,
-        Languages_it,
-    });
+    // const projectsCategories = await models.Projects_categories.findAll({
+    //     distinct : Projects.name,
+    //     include: Projects,
+    //     Languages_it,
+    // });
     
     const languagesIt = await Languages_it.findAll({
-        order:[[Languages_it.name]]
+        order:[["name"]]
     })
     
     res.render("pages/project", {
         projects,
-        projectsCategories, 
+        // projectsCategories, 
         languagesIt
     });
 };
